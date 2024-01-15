@@ -1,0 +1,130 @@
+:root {
+  --menu-width: 250px;
+  --menu-background: #3282b8;
+  --menu-text-color: #fff;
+  --content-text-color: #000;
+  --header-text-color: #3282b8;
+  --spacing: 2rem;
+  --footer-background: #333;
+  --footer-text-color: #fff;
+}
+
+html {
+  font-size: 20px;
+}
+
+* {
+  box-sizing: content-box;
+  padding: 0;
+  margin: 0;
+}
+
+.container{
+  display: flex;
+}
+#header{
+  height: 100vh;
+  padding: 30px;
+  background-color: var(--menu-background);
+} 
+#header p{
+  color: var(--menu-text-color);
+}
+#header ul li,
+#header ul li a{
+  color: var(--menu-text-color);
+  margin-top: 20px;
+  list-style-type: none;
+  text-decoration: overline;
+}
+
+#content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+#footer{
+  background-color: var(--footer-background);
+  width: 100%;
+  text-align: center;
+}
+#footer p{
+  color: var(--footer-text-color);
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.container_par{
+  padding: 30px;
+}
+.container_par p{
+  margin-top: 30px;
+  text-align: justify;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 1;
+  text-align: center;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+
+.modal-content {
+  background-color: var(--header-text-color);
+  color: var(--menu-text-color);
+  width: 400px;
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.close {
+  color: var(--footer-background);
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: var(--content-text-color);
+}
+
+.modal-content ul li{
+  list-style-type: none;
+  font-size: 16px;
+  margin-top: 20px;
+}
+#date{
+  padding-top: 8px;
+  color: var(--header-text-color);
+  font-weight: bold;
+}
+
+
+@media (max-width:500px){
+  .container{
+    flex-direction: column;
+  }
+  #header{
+    height: fit-content ;
+  }
+  #header ul{
+    display: flex;
+  }
+  #header ul li {
+    margin-right: 30px;
+  }
+  .modal{
+    left: 50%;
+  }
+}
